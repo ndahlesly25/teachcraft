@@ -4,6 +4,28 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
+// Hamburger Toggle - More Reliable
+const hamburger = document.querySelector('.hamburger');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// Ensure the menu remains open after other scripts run
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('show'); // Close only on larger screens
+    }
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove('show');
+    }
+});
+
+
 // Slideshow
 let slideIndex = 0;
 
@@ -75,6 +97,19 @@ window.addEventListener('load', () => {
         cookiePopup.classList.remove('show-popup');
     });
 });
+
+ // JavaScript to highlight the active link based on the current URL
+ const currentLocation = window.location.href;
+ const navLinks = document.querySelectorAll('.nav-links a');
+ 
+ navLinks.forEach(link => {
+     if (link.href === currentLocation) {
+         link.classList.add('active');
+     } else {
+         link.classList.remove('active');
+     }
+ });
+
 
     // Handle Booking
 document.getElementById('bookingForm').addEventListener('submit', function(event) {
@@ -179,3 +214,16 @@ document.getElementById('login').addEventListener('submit', function(event) {
         alert('Invalid email or password!');
     }
 });
+
+// Function to close login window
+function closeLogin() {
+    document.getElementById("loginForm").style.display = "none";
+}
+
+// Close when clicking outside the login window
+window.onclick = function(event) {
+    let loginForm = document.getElementById("loginForm");
+    if (event.target == loginForm) {
+        loginForm.style.display = "none";
+    }
+}

@@ -9,7 +9,7 @@
 <body>
 
 <!-- Navbar (Optional: Include if needed for consistency) -->
-<section id="#home" class="section">
+<section id="home" class="section">
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -19,12 +19,11 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#classes">Classes</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="videos.html">Videos</a></li>
                 <li><a href="booking.html">Book Now</a></li>
-                <li><a href="live.html">Live</a></li>
-                <li><a href="#login-form" onclick="openLogin()">Login</a></li>
+                <li><a href="live.html" class="active">Live Classes</a></li>
+                <li><a href="#login-form" onclick="openLogin()">Login / Sign Up</a></li>
             </ul>
         </div>
     </nav>
@@ -32,7 +31,18 @@
 
 
 <div class="wrapper">
-    <div class="main-content">
+    <div class="main-content">  
+        
+        <!-- Live Zoom call Section -->
+<section id="live-classes" class="section">
+    <div class="container">
+        <h2>Join Our Live Classes</h2>
+        <p>Click the button to join the live session on Zoom.</p>
+        <a href="https://us02web.zoom.us/j/1234567890?pwd=abcd1234" target="_blank" class="zoom-btn">
+            Join Zoom Call
+        </a>
+    </div>
+</section>
 
 <!-- Live Section -->
 <section id="live" class="section">
@@ -47,18 +57,10 @@
             <p>Live Session</p>
         </div>
 
-
-
         <div class="live-container">
             <!-- Embed a YouTube or Facebook Live Video -->
-            <iframe 
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                title="Live Class" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-            <p>Join our live classes to learn more and improve your skills in real-time!</p>
+            <iframe width="373" height="663" src="https://www.youtube.com/embed/chgVy0soSJk" title="How to use would and want" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>How to use would and want</p>
         </div>
 
        
@@ -111,5 +113,6 @@
 </div>
 
 <script src="scripts.js"></script>
+
 </body>
 </html>

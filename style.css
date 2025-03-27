@@ -5,15 +5,24 @@
     box-sizing: border-box;
 }
 
-
 header.home {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    padding-top: 70px; /* Adjust this value based on the navbar height */
+   /* font-family: Arial, sans-serif;
+    padding-top: 70px;   */
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Adjust width to avoid full stretch */
+    max-width: 1200px; /* Prevents it from becoming too wide */
 }
 
 .navbar {
@@ -23,19 +32,11 @@ body {
     width: 100%; /* Ensure it stretches across the screen */
     z-index: 1000; /* Keep it above other content */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 16px;
     background-color: #002B5C;
     color: white;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%; /* Adjust width to avoid full stretch */
-    max-width: 1200px; /* Prevents it from becoming too wide */
 }
 
 /* Logo styling */
@@ -54,7 +55,6 @@ body {
     margin-right: 10px;
     border-radius: 50%;
 }
-
 
 /* Hamburger button */
 .hamburger {
@@ -314,7 +314,6 @@ body {
     cursor: pointer;
 }
 
-
 .video-container {
     display: flex;
     flex-wrap: wrap;
@@ -340,9 +339,6 @@ body {
     font-size: 16px;
     color: #555;
 }
-
-
-
 
 #booking {
     padding: 40px;
@@ -400,28 +396,15 @@ body {
 
 /* Forms */
 input, button {
-    display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-}
-
-
-
-footer {
-    background-color: #002B5C;
-    color: white;
-    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 15px;
-}
 
 .contact,
 .social {
@@ -521,8 +504,11 @@ footer {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 15px;
     }
 
     .footer-bottom {
@@ -545,7 +531,6 @@ footer {
     }
 }
 
-
 html, body {
     height: 100%; /* Ensures the body and html take up full viewport height */
     margin: 0;
@@ -563,8 +548,10 @@ html, body {
 }
 
 footer {
-    
+    background-color: #002B5C;
+    color: white;
     padding: 20px;
+    font-size: 16px;
     text-align: center;
     margin-top: auto; /* Pushes the footer to the bottom */
 }
@@ -583,6 +570,8 @@ footer {
     z-index: 1000;
 }
 
+
+/* Login content box */
 .login-container, .signup-container {
     background: #fff;
     padding: 20px;
@@ -590,6 +579,7 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    position: relative;
 }
 
 .close-btn {
@@ -598,14 +588,6 @@ footer {
     right: 20px;
     font-size: 24px;
     cursor: pointer;
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
 }
 
 button {
@@ -630,4 +612,27 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+
+#live-classes {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.zoom-btn {
+    display: inline-block;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(9, 1, 38, 0.899);
+}
+
+.zoom-btn:hover {
+    background-color: #0a0740d8;
 }
