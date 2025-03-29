@@ -56,6 +56,12 @@ body {
     border-radius: 50%;
 }
 
+/* Logo */
+.navbar .logo {
+    padding-right: 60px; /* Add space to the right of the logo to prevent overlap */
+}
+
+
 /* Hamburger button */
 .hamburger {
     display: none;
@@ -63,7 +69,7 @@ body {
     background: none;
     border: none;
     color: white;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 /* Nav Links */
@@ -107,6 +113,7 @@ body {
         display: flex;
     }
 }
+
 
 .slideshow {
     position: relative;
@@ -245,8 +252,8 @@ body {
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 200px;
+    width: 80%;
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease;
@@ -263,6 +270,7 @@ body {
     margin-top: 8px;
     font-size: 16px;
     color: #555;
+    display: inline-flex;
 }
 
 /* Enlarged Image Styling */
