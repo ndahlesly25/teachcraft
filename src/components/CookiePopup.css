@@ -147,3 +147,38 @@
     font-size: 0.9rem;
   }
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cookie-popup {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.9rem;
+  }
+  .cookie-popup p {
+    margin-bottom: 10px;
+  }
+  .cookie-popup button {
+    margin: 5px 0 0 0;
+  }
+
+  .cookie-modal-content {
+    padding: 15px 20px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-popup {
+    padding: 12px 15px;
+    font-size: 0.85rem;
+  }
+  .cookie-modal-content {
+    padding: 12px 15px;
+  }
+  .cookie-modal-content .close {
+    top: 8px;
+    right: 10px;
+    font-size: 1.5rem;
+  }
+}
