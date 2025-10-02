@@ -1,0 +1,117 @@
+/* Footer Base */
+.footer {
+  background-color: #faf7ef !important; /* cream white background */
+  color: #333 !important; /* dark text for contrast */
+  padding: 3rem 1rem 1rem 1rem !important;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  z-index: 1000;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Contact Section */
+.footer .contact h3,
+.footer .social h3,
+.footer .newsletter h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #b88b4a !important; /* golden-brown heading for contrast */
+}
+
+.footer .contact p,
+.footer .contact a {
+  color: #333 !important;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer .contact a:hover {
+  color: #b88b4a !important;
+}
+
+/* Social Section */
+.footer .social a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333 !important;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social a:hover {
+  color: #b88b4a !important;
+  transform: translateY(-3px);
+}
+
+
+/* Newsletter Section */
+.newsletter form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  flex: 1 1 200px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #e0d8cc;
+  padding-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%;
+  }
+}

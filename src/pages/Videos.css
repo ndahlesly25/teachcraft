@@ -1,0 +1,294 @@
+.videos-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+/* Full-width Banner */
+.videos-banner {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/images/slideshow3.jpg") center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+/* Banner Title Animation */
+.videos-banner h1 {
+  font-size: 3.5rem;
+  color: gold;
+  margin: 0.5rem 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideFadeDown 1s ease forwards;
+}
+
+.videos-banner p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFadeUp 1s ease forwards;
+  animation-delay: 0.4s; /* delay so it comes after the title */
+}
+
+@keyframes slideFadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intro text animation */
+.videos-intro p {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 1s ease forwards;
+  animation-delay: 0.8s; /* comes in after banner text */
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* Intro text */
+.videos-intro {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Grid */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Video Card */
+.video-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.video-card:hover video {
+  transform: scale(1.08);
+  filter: brightness(70%);
+}
+
+/* Play Icon Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.video-card:hover .overlay {
+  opacity: 1;
+}
+
+.play-icon {
+  font-size: 3rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .play-icon {
+  transform: scale(1.2);
+  color: gold;
+}
+
+/* Video title */
+.video-title {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Banner text animations */
+.fade-in-down {
+  animation: fadeInDown 1s ease forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.fade-in {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Staggered animation delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+.delay-6 { animation-delay: 1.2s; }
+
+/* Lightbox */
+.video-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+.video-lightbox video {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.video-lightbox .lightbox-title {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.video-lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .videos-banner { height: 200px; }
+  .videos-banner h1 { font-size: 2rem; }
+  .videos-banner p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .videos-banner { height: 150px; }
+  .videos-banner h1 { font-size: 1.5rem; }
+  .videos-banner p { font-size: 0.9rem; }
+}
+
+/* Hover Play Icon Effect */
+.video-card::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.video-card:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Lightbox Fade + Scale Animation */
+.video-lightbox {
+  animation: fadeInScale 0.4s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Lightbox Animations */
+.video-lightbox {
+  animation: fadeInScale 0.4s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.video-lightbox.closing {
+  animation: fadeOutScale 0.4s ease forwards;
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}

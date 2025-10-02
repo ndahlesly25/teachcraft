@@ -1,0 +1,178 @@
+.caption {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: clamp(5px, 1vw, 12px) clamp(10px, 2vw, 20px);
+  border-radius: 5px;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 20px;
+
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.caption.fade-in {
+  opacity: 1;
+}
+
+.caption.fade-out {
+  opacity: 0;
+}
+
+/* Slide container and other styles remain the same */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.slide {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Navigation arrows */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot:hover,
+.active-dot {
+  background-color: #fff;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .caption {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    padding: clamp(3px, 1vw, 8px) clamp(5px, 2vw, 10px);
+    margin-bottom: 15px;
+  }
+
+  .prev,
+  .next {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+
+/* Caption slide up + fade in */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.caption {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: clamp(5px, 1vw, 12px) clamp(10px, 2vw, 20px);
+  border-radius: 5px;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 20px;
+
+  opacity: 0;
+}
+
+.caption.fade-in {
+  animation: slideUpFade 1s forwards;
+}
+
+.caption.fade-out {
+  opacity: 0;
+  animation: none;
+}

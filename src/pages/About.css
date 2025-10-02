@@ -1,0 +1,117 @@
+.about-page {
+  width: 100%;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+/* Full-width Banner */
+.about-banner {
+  width: 100%;
+  background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/images/slideshow1.jpg") center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.about-banner h1 {
+  font-size: 3.5rem;
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+.about-banner p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Page Content */
+.about-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Sections */
+.about-section {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+.about-section h2 {
+  color: #0077ff;
+  margin-bottom: 1rem;
+}
+
+/* Cards */
+.offer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1 1 45%;
+  background-color: #fff8e6; /* cream */
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card .icon { font-size: 2rem; color: #ffcc00; }
+
+/* Stagger animation */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Banner text animations */
+.about-banner h1, .about-banner p {
+  opacity: 0;
+  animation: fadeInText 1.2s forwards;
+}
+
+.about-banner h1 { animation-delay: 0.3s; }
+.about-banner p { animation-delay: 0.8s; }
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-banner { height: 200px; }
+  .about-banner h1 { font-size: 1.8rem; }
+  .about-banner p { font-size: 1rem; }
+  .offer-cards { flex-direction: column; }
+  .card { flex: 1 1 100%; }
+}
+
+@media (max-width: 480px) {
+  .about-banner { height: 150px; }
+  .about-banner h1 { font-size: 1.5rem; }
+  .about-banner p { font-size: 0.9rem; }
+}
