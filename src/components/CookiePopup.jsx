@@ -4,32 +4,35 @@ import "./CookiePopup.css";
 export default function CookiePopup() {
   const [accepted, setAccepted] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showBar, setShowBar] = useState(false); // new state for slide-in
 
   useEffect(() => {
     const a = localStorage.getItem("tc_accept_cookies");
     setAccepted(Boolean(a));
+
+    if (!a) {
+      // delay showing the cookie bar by 1.5 seconds
+      const timer = setTimeout(() => setShowBar(true), 1500);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const accept = () => {
     localStorage.setItem("tc_accept_cookies", "1");
     setAccepted(true);
     setShowModal(false);
+    setShowBar(false);
   };
 
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
   if (accepted) return null;
 
   return (
     <>
       {/* Floating Cookie Bar */}
-      <div className="cookie-popup">
+      <div className={`cookie-popup ${showBar ? "show" : ""}`}>
         <p>
           This website uses cookies to ensure you get the best experience.
         </p>

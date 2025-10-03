@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Videos from "./pages/Videos";
+import EnglishCamps from "./pages/EnglishCamps";  // ⬅️ add this import
 import Booking from "./pages/Booking";
 import Live from "./pages/Live";
 import Contact from "./pages/Contact";
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/videos" element={<Videos />} />
+          <Route path="/english-camps" element={<EnglishCamps />} /> {/* ⬅️ new route */}
           <Route path="/booking" element={<Booking />} />
           <Route path="/live" element={<Live />} />
           <Route path="/contact" element={<Contact />} />
